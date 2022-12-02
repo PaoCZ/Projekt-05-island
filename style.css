@@ -7,6 +7,10 @@
  Jedeme retro cernobile, dnes barvy nepotrebujeme.
 */
 
+* {
+    margin: 0 auto;
+    padding: 0;
+}
 
 body {
     margin: 0;
@@ -17,27 +21,304 @@ body {
     line-height: 1.6;
 }
 
+p {
+    padding: 10px 20px;
+}
+
 
 /* HLAVICKA */
+.header {
+    background-image: url('./images/island-hlavicka.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+    text-align: center;
+    background-position: center; 
+    padding-bottom: 20px;
+    position: relative;
+    z-index: -1;
+}
 
 .titulek {
+    padding-top: 20px;
     font-family: 'Raleway', serif;
+    font-size: 62px;
+}
+
+.perex {
+    padding-bottom: 20px;
+    position: relative
+}
+
+.perex::after {
+    background-color: #fff;
+    content: "";
+    display:inline-block;
+    height: 2px;
+    width: 100px;
+    position: absolute;
+    bottom: 0px;
+    left: calc(50% - 50px);
+}
+
+.autor {
+    font-style: italic;
 }
 
 
 /* MENU */
 
+.menu {
+    padding: 20px;
+    color: grey;
+    text-align: center;
+}
 
+li {
+    text-decoration: none;
+    list-style-type: none;
+    border-bottom: 1px solid grey;
+}
 
+li a {
+    text-decoration: none;
+    color: grey;
+    text-transform: uppercase;
+    
+}
 
+.content {
+    background-color: white;
+}
 /* OBSAH */
 
 
+.popisek {
+    text-align: center;
+    color: grey;
+    padding-bottom: 40px;
+}
 
+.popisek a {
+    color: grey;
+}
+
+img {
+    padding-top: 40px;
+    width: 100%;
+    height: 100%;
+}
+
+.nadpis {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+h2 {
+    padding: 20px;
+}
+
+h2::before {
+    background-color: #009fff;
+    content: "";
+    display:inline-block;
+    height: 5px;
+    width: 75px;
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+}
 
 /* FOTOGALERIE */
 
+.galerie {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: right;
+}
 
+.galerie .foto {
+    flex: 1 0 100%;
+    padding-bottom: 80px;
+    margin-left: 0;
+}
+
+.galerie .foto img {
+    padding: 0;
+}
+
+.galerie .popisek {
+    font-weight: 900;
+}
+
+.popisek-copy {
+    font-weight: normal;
+}
 
 
 /* PATICKA */
+
+.paticka {
+    padding: 20px;
+    font-weight: 900;
+    color: gray;
+    padding-top: 80px;
+    box-shadow: rgba(73, 73, 95, 0.25) 0px 30px 60px -12px , rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+
+}
+
+.paticka a {
+    color: grey;
+}
+
+@media (min-width: 500px) {
+    .menu {
+        width: 100%;
+        display: flex;
+    }
+
+    li {
+        flex: 1 0 0%;
+        float: block;
+        border-top: 1px solid grey;
+        border-bottom: 1px solid grey;
+        padding: 10px 20px;
+    }
+
+    li:not(:last-child) {
+        border-right: 1px solid grey;
+    }
+
+    li:not(:first-child) {
+        border-left: 1px solid grey;
+    }
+
+    .text_image {
+        position: relative;
+    }
+
+    .text_image .popisek {
+        position: absolute;
+        text-align: center;
+        color: white;
+        bottom: 0px;
+        right: 0px;
+        padding: 10px;
+    }
+    
+    .galerie .foto {
+        padding-bottom: 0;
+        width: 50%;
+    }
+
+    .galerie .foto {
+        display: block;
+    }
+
+    .galerie .popisek {
+        display: none;
+    }
+
+    .popisek a {
+        color: white;
+    }
+
+    .galerie .foto {
+        flex: 0 0 50%;
+    }
+
+    .paticka {
+        padding: 20px;
+    }
+}
+
+@media (min-width: 1000px) {
+    .header {
+        padding-bottom: 100px;
+    }
+
+    .content {
+        width: 960px;
+        margin-top: -40px;
+        box-shadow: rgba(73, 73, 95, 0.25) 0px 30px 60px -12px , rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+    }
+
+    .menu {
+        min-width: 220px;
+        width: 15%;
+        float: left;
+        display: block;
+        text-align: left;
+    }
+
+    .uvod {
+        float: right;
+        width: 75%;
+        padding-top: 20px;
+    }
+
+    li {
+        border-top: none;
+        padding: 0 5px;
+    }
+    li:not(:last-child) {
+        border-right: none;
+    }
+
+    li:not(:first-child) {
+        border-left: none;
+    }
+
+    .sekce:nth-child(odd) {
+        padding-left: 150px;
+    }
+
+    .text_image img {
+        width: 960px;
+    }
+
+    .sekce:nth-child(odd) .text_image {
+        margin-left: -150px;
+    }
+
+    .sekce:nth-child(even) {
+        padding-right: 150px;
+    }
+
+    .sekce:nth-child(even) .text_image .popisek {
+        right: -150px;
+    }
+
+    .galerie .foto {
+        flex: 0 0 33.333333%;
+    }
+
+    .galerie .foto {
+        position: relative;
+    }
+
+
+    .galerie .foto:hover>.popisek  {
+        display:block;
+        position: absolute;
+        text-align: center;
+        color: white;
+        bottom: 0px;
+        right: 0px;
+        padding: 10px;
+    }
+    
+    .header_content {
+        width: 960px;
+    }
+
+
+    .paticka {
+        box-shadow: none;
+    }
+
+    .paticka p {
+        width: 960px;
+    }
+    
+}
